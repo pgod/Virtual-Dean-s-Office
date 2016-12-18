@@ -6,14 +6,14 @@ import java.time.LocalDate;
  * Created by Patryk on 2016-12-18.
  */
 public class Person {
-    protected String name;
-    protected String surname;
-    protected String secondName;
-    protected char gender;
-    protected String familyName;
-    protected LocalDate dateOFBirth;
-    protected String pesel;
-    protected String email;
+    private String name;
+    private String surname;
+    private String secondName;
+    private char gender;
+    private String familyName;
+    private LocalDate dateOFBirth;
+    private String pesel;
+    private String email;
     private String phoneNumber;
     private Address address;
 

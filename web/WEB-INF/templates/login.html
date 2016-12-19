@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<script th:src="@{http://code.jquery.com/jquery-1.10.2.js}"> </script>
+<link  th:href="@{resources/css/login.css}" href="resources/css/login.css"  rel="stylesheet" type="text/css"  />
+<script th:src="@{resources/js/login.js}" src="resources/js/login.js" defer></script>
+<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+
+
+<div class="login-page">
+    <div class="form">
+        <form class="remindPasswordForm" method="post">
+            <input type="text" id="pesel" name="pesel" placeholder="Pesel"/>
+            <input type="text" id="email" name="email" placeholder="Email"/>
+            <button>SEND</button>
+            <p class="message"> <a href="#">Back</a></p>
+        </form>
+        <form  class="loginForm" th:action="@{/login}" method="post">
+            <p th:if="${loginError}" class="alert alert-danger">Wrong username or password</p>
+            <input type="text" id="username" name="username" placeholder="Username"/>
+            <input type="password" id="password" name="password" placeholder="Password"/>
+            <button>LOGIN</button>
+            <p class="message">Forgot password? <a href="#">Click Here</a></p>
+        </form>
+    </div>
+</div>
+

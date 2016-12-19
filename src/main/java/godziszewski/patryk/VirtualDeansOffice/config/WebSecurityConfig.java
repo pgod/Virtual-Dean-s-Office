@@ -34,13 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureForwardUrl("/loginError")
                 .successForwardUrl("/")
                 .permitAll();
-
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.
-                ignoring()
+        web
+                .ignoring()
                 .antMatchers("/resources/**");
     }
 }

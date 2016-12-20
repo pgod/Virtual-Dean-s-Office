@@ -2,11 +2,11 @@ package godziszewski.patryk.VirtualDeansOffice.repository.impl;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-import godziszewski.patryk.VirtualDeansOffice.repository.StudentRepository;
 import godziszewski.patryk.VirtualDeansOffice.model.Student;
+import godziszewski.patryk.VirtualDeansOffice.repository.StudentRepository;
 
 import static godziszewski.patryk.VirtualDeansOffice.model.StudentBuilder.createStudent;
 
@@ -15,10 +15,10 @@ import static godziszewski.patryk.VirtualDeansOffice.model.StudentBuilder.create
  */
 @Repository
 public class InMemoryStudentRepositoryImpl implements StudentRepository {
-    private List<Student> students;
+    private Set<Student> students;
 
     public InMemoryStudentRepositoryImpl() {
-        this.students = new ArrayList<>();
+        this.students = new HashSet<>();
 
         Student s1 =
                 createStudent()
@@ -50,13 +50,13 @@ public class InMemoryStudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public Set<Student> getAllStudents() {
         return students;
     }
 
     @Override
-    public List<Student> getStudentsByMajor(String major) {
-        List<Student> studentsByMajor = new ArrayList<>();
+    public Set<Student> getStudentsByMajor(String major) {
+        Set<Student> studentsByMajor = new HashSet<>();
         for(Student student : students) {
             for(String studentMajor : student.getMajors()) {
                 if(studentMajor.equals(major))

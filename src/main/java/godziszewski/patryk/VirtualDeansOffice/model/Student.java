@@ -1,16 +1,16 @@
 package godziszewski.patryk.VirtualDeansOffice.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Patryk on 2016-12-18.
  */
 public class Student extends Person {
     private String albumNumber;
-    List<Grade> grades;
+    private Set<Grade> grades;
     private boolean isGraduate;
-    private List<String> majors;
+    private Set<String> majors;
 
     Student(StudentBuilder studentBuilder) {
         super(
@@ -19,8 +19,8 @@ public class Student extends Person {
                 studentBuilder.username,
                 studentBuilder.password
         );
-        this.majors = new ArrayList<>();
-        this.grades = new ArrayList<>();
+        this.majors = new HashSet<>();
+        this.grades = new HashSet<>();
     }
 
     public String getAlbumNumber() {
@@ -31,11 +31,11 @@ public class Student extends Person {
         this.albumNumber = albumNumber;
     }
 
-    public List<Grade> getGrades() {
+    public Set<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(List<Grade> grades) {
+    public void setGrades(Set<Grade> grades) {
         this.grades = grades;
     }
 
@@ -47,11 +47,11 @@ public class Student extends Person {
         isGraduate = graduate;
     }
 
-    public List<String> getMajors() {
+    public Set<String> getMajors() {
         return majors;
     }
 
-    public void setMajors(List<String> majors) {
+    public void setMajors(Set<String> majors) {
         this.majors = majors;
     }
 }

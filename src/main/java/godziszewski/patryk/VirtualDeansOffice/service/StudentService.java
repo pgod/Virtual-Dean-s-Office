@@ -1,6 +1,6 @@
 package godziszewski.patryk.VirtualDeansOffice.service;
 
-import java.util.List;
+import java.util.Set;
 
 import godziszewski.patryk.VirtualDeansOffice.model.Student;
 
@@ -9,7 +9,7 @@ import godziszewski.patryk.VirtualDeansOffice.model.Student;
  */
 public interface StudentService {
     Student getStudentByUsername(String username);
-    List<Student> getAllStudents();
-    List<Student> getStudentsByMajor(String major);
+    Set<Student> getAllStudents();
+    Set<Student> getStudentsByMajor(String major);
     void addStudent(Student student);
 }

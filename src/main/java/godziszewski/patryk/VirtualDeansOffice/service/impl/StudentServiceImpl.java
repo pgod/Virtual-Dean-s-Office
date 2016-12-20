@@ -3,10 +3,10 @@ package godziszewski.patryk.VirtualDeansOffice.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
-import godziszewski.patryk.VirtualDeansOffice.repository.StudentRepository;
 import godziszewski.patryk.VirtualDeansOffice.model.Student;
+import godziszewski.patryk.VirtualDeansOffice.repository.StudentRepository;
 import godziszewski.patryk.VirtualDeansOffice.service.StudentService;
 
 /**
@@ -22,12 +22,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public Set<Student> getAllStudents() {
         return studentRepository.getAllStudents();
     }
 
     @Override
-    public List<Student> getStudentsByMajor(String major) {
+    public Set<Student> getStudentsByMajor(String major) {
         return studentRepository.getStudentsByMajor(major);
     }
 

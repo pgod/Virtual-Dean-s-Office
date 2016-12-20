@@ -1,5 +1,6 @@
 package godziszewski.patryk.VirtualDeansOffice.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,6 +10,18 @@ public class Student extends Person {
     private String albumNumber;
     List<Grade> grades;
     private boolean isGraduate;
+    private List<String> majors;
+
+    Student(StudentBuilder studentBuilder) {
+        super(
+                studentBuilder.name,
+                studentBuilder.surname,
+                studentBuilder.username,
+                studentBuilder.password
+        );
+        this.majors = new ArrayList<>();
+        this.grades = new ArrayList<>();
+    }
 
     public String getAlbumNumber() {
         return albumNumber;
@@ -32,5 +45,13 @@ public class Student extends Person {
 
     public void setGraduate(boolean graduate) {
         isGraduate = graduate;
+    }
+
+    public List<String> getMajors() {
+        return majors;
+    }
+
+    public void setMajors(List<String> majors) {
+        this.majors = majors;
     }
 }

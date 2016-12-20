@@ -8,6 +8,11 @@ import java.util.List;
 public class Teacher extends Person {
     List<String> subjects;
 
+    // TODO
+    Teacher(String name, String surname, String username, String password) {
+        super(name, surname, username, password);
+    }
+
     public List<String> getSubjects() {
         return subjects;
     }

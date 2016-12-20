@@ -1,6 +1,9 @@
 package godziszewski.patryk.VirtualDeansOffice.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
+
+import static java.util.UUID.randomUUID;
 
 /**
  * Created by Patryk on 2016-12-18.
@@ -19,6 +22,8 @@ public abstract class Person {
     private Address address;
     private String username;
     private String password;
+
+    private  String UUID = randomUUID().toString();
 
     Person(String name, String surname, String username, String password) {
         this.name = name;
@@ -138,11 +143,11 @@ public abstract class Person {
 
         Person person = (Person) o;
 
-        return username.equals(person.username);
+        return UUID != null ? UUID.equals(person.UUID) : person.UUID == null;
     }
 
     @Override
     public int hashCode() {
-        return username.hashCode();
+        return Objects.hash(UUID);
     }
 }
